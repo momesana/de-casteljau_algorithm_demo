@@ -65,6 +65,7 @@ void MainWindow::setupConnections()
         emit progressChanged(progress);
     });
     connect(this, &MainWindow::progressChanged, ui->casteljauWidget, &CasteljauCanvas::updateProgress);
+    connect(ui->action_Quit, &QAction::triggered, this, &MainWindow::close);
     connect(ui->actionClear, &QAction::triggered, ui->casteljauWidget, &CasteljauCanvas::clear);
     connect(ui->casteljauWidget, &CasteljauCanvas::pointAdded, m_pointModel, &PointModel::appendPoint);
     connect(m_animation, &Animation::finished, [=]() {
