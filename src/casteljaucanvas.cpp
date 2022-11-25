@@ -6,6 +6,7 @@
 
 #include <QDebug>
 #include <QPaintEvent>
+#include <QPainterPath>
 #include <QPainter>
 #include <QStyleOption>
 #include <QModelIndex>
