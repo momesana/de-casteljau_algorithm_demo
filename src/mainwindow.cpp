@@ -108,7 +108,7 @@ void MainWindow::setupConnections()
         connect(btn, &ColorToolButton::clicked, signalMapper, qOverload<>(&QSignalMapper::map));
         signalMapper->setMapping(btn, btnKeyMap.value(btn));
     }
-    connect(signalMapper, qOverload<const QString&>(&QSignalMapper::mapped), [this, settings, btnKeyMap](const QString& configKey){
+    connect(signalMapper, qOverload<const QString&>(&QSignalMapper::mappedString), [this, settings, btnKeyMap](const QString& configKey){
         const QColor initialColor = settings->value(configKey, QColor(Qt::white)).value<QColor>();
         const QColor selectedColor = QColorDialog::getColor(initialColor, this, tr("Select Color"));
         if (selectedColor.isValid()) {
