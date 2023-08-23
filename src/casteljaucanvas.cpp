@@ -45,7 +45,7 @@ void CasteljauCanvas::paintEvent(QPaintEvent *event)
     Q_UNUSED(event);
 
     QStyleOption opt;
-    opt.init(this);
+    opt.initFrom(this);
     QPainter painter(this);
     style()->drawPrimitive(QStyle::PE_Widget, &opt, &painter, this);
 
